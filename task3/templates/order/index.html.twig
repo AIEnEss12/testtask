@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Список заказов{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Список заказов, всего: {{ orders.getTotalItemCount }}</h1>
+    {% set perPage = orders.getItemNumberPerPage %}
+    <form action="{{ path('app_order') }}" method="get">
+        <label for="perPage">Выберите количество строк:</label>
+        <select name="perPage" id="perPage" onchange="this.form.submit()">
+            <option value="5" {% if perPage == 5 %}selected{% endif %}>5</option>
+            <option value="10" {% if perPage == 10 %}selected{% endif %}>10</option>
+            <option value="20" {% if perPage == 20 %}selected{% endif %}>20</option>
+        </select>
+    </form>
+
+    <table>
+            <thead>
+                <tr>
+                    <th>Номер по порядку</th>
+                    <th>Название заказа</th>
+                    <th>ФИ менеджера</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.name }}</td>
+                        <td>{{ order.firstName }} {{ order.lastName }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {{ knp_pagination_render(orders) }}
+</div>
+{% endblock %}

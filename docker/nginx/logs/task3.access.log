@@ -1,0 +1,4 @@
+172.22.0.1 - - [16/Dec/2023:19:08:31 +0000] "GET /orders HTTP/1.1" 500 190147 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+172.22.0.1 - - [16/Dec/2023:19:08:31 +0000] "GET /_wdt/711957 HTTP/1.1" 200 18488 "http://localhost/orders" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+172.22.0.1 - - [16/Dec/2023:19:09:10 +0000] "GET /orders HTTP/1.1" 500 612503 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+172.22.0.1 - - [16/Dec/2023:19:09:10 +0000] "GET /_wdt/005d1e HTTP/1.1" 200 20728 "http://localhost/orders" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
